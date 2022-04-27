@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no,minimal-ui,viewport-fit=cover">
+    <!-- <meta name="apple-mobile/src-web-app-capable" content="yes">
+    <meta name="apple-mobile/src-web-app-status-bar-style" content="black"> -->
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <title>外出登记二维码</title>
+    <script type="text/javascript">
+    function getTime() {
+
+        var dateObj = new Date();
+
+        var year = dateObj.getFullYear(); //年
+        var month = dateObj.getMonth() + 1; //月  (注意：月份+1)
+        var date = dateObj.getDate(); //日
+        var day = dateObj.getDay();
+        var weeks = ["星期日", "星期一", "星期二", "星期三", "星期四", "星期五", "星期六"];
+        var week = weeks[day]; //根据day值，获取星期数组中的星期数。
+        var hours = dateObj.getHours(); //小时
+        var minutes = dateObj.getMinutes(); //分钟
+        var seconds = dateObj.getSeconds(); //秒
+
+        if (month < 10) {
+            month = "0" + month;
+        }
+        if (date < 10) {
+            date = "0" + date;
+        }
+        if (hours < 10) {
+            hours = "0" + hours;
+        }
+        if (minutes < 10) {
+            minutes = "0" + minutes;
+        }
+        if (seconds < 10) {
+            seconds = "0" + seconds;
+        }
+
+        var newDate = year + "-" + month + "-" + date + "&nbsp" + hours + ":" + minutes + ":" + seconds;
+        document.getElementById("date1").innerHTML = newDate; //在div中写入时间
+        setTimeout('getTime()', 500); //每隔500ms执行一次getTime()
+    }
+
+    function getTime1() {
+
+        getTime()
+        var dateObj1 = new Date();
+
+        var year = dateObj1.getFullYear(); //年
+        var month = dateObj1.getMonth() + 1; //月  (注意：月份+1)
+        var date = dateObj1.getDate(); //日
+        var date2 = date + 2; //日
+        var day = dateObj1.getDay();
+        var weeks = ["星期日", "星期一", "星期二", "星期三", "星期四", "星期五", "星期六"];
+        var week = weeks[day]; //根据day值，获取星期数组中的星期数。
+        var hours = dateObj1.getHours(); //小时
+        var hours2 = hours - 1; //小时
+        var minutes = dateObj1.getMinutes(); //分钟
+        var seconds = dateObj1.getSeconds(); //秒
+
+        if (month < 10) {
+            month = "0" + month;
+        }
+        if (date < 10) {
+            date = "0" + date;
+        }
+        if (date2 < 10) {
+            date2 = "0" + date2;
+        }
+        if (hours2 == -1) {
+            hours2 = 23;
+        }
+        if (hours < 10) {
+            hours = "0" + hours;
+            hours2 = "0" + hours2;
+        }
+        if (minutes < 10) {
+            minutes = "0" + minutes;
+        }
+        if (seconds < 10) {
+            seconds = "0" + seconds;
+        }
+        var newDate2 = year + "-" + month + "-" + date + "&nbsp" + hours2 + ":" + minutes + ":" + seconds;
+        var newDate3 = year + "-" + month + "-" + date2 + "&nbsp" + hours + ":" + minutes + ":" + seconds;
+        document.getElementById("date2").innerHTML = '150'; //在div中写入时间
+        document.getElementById("date3").innerHTML = '2112114040'; //在div中写入时间
+        document.getElementById("date2").innerHTML = newDate2; //在div中写入时间
+        document.getElementById("date3").innerHTML = newDate3; //在div中写入时间
+    }
+    </script>
+    <style>
+    body {
+        width: 100vw;
+        background-color: #f5f5f5;
+        margin: 0px;
+    }
+    .bgc_w {
+        background-color: white;
+    }
+
+    .bgc_g {
+        background-color: #f5f5f5;
+    }
+
+    .height15 {
+        height: 25px;
+        line-height: 25px;
+        width: auto;
+        display: flex;
+        justify-content: space-between;
+        padding: 8px 15px;
+        border-bottom: 1px solid #f5f5f5;
+    }
+
+    .height100 {
+        height: 60px;
+        line-height: 60px;
+        width: auto;
+        font-size: large;
+        /*font-weight: bold;*/
+    }
+
+    .middlediv {
+        text-align: center;
+        vertical-align: middle;
+    }
+
+    .dflex {
+        display: flex;
+        justify-content: space-between;
+        padding: 10px 15px;
+        border-bottom: 1px solid #f5f5f5;
+    }
+
+    .fontgrey {
+        padding-left: 9px;
+        color: grey;
+        height: 3px;
+    }
+
+    #date2 {
+        font-weight: bold;
+        font-size: small;
+    }
+
+    #date3 {
+        font-weight: bold;
+        font-size: small;
+    }
+
+    .dimg {
+        padding: 25px;
+    }
+    .dfontsize{
+        font-size: small;
+    }
+    </style>
+</head>
+
+<body onLoad="getTime1()">
+    <div id="date1" class="bgc_w height100 middlediv">时间</div>
+    <div class="bgc_g middlediv dimg"><img src="https://s2.loli.net/2021/12/07/m5fLGNWpOdXyMCY.png" height="130" width="130"></div>
+    <div class="dfontsize">
+        <div>
+            <h5 class="bgc_g fontgrey">外出时间</h5>
+            <div class="bgc_w">
+                <div class="dflex">
+                    <div>离校时间</div>
+                    <div id="date2"></div>
+                </div>
+                <div class="dflex">
+                    <div>回校时间</div>
+                    <div id="date3"></div>
+                </div>
+            </div>
+        </div>
+        <div>
+            <h5 class="bgc_g fontgrey">学生信息</h5>
+            <div class="bgc_w">
+                <div class="height15">
+                    <div>姓名</div>
+                    <div class="fontgrey">张智云</div>
+                </div>
+                <div class="height15">
+                    <div>学号</div>
+                    <div class="fontgrey">2112114062</div>
+                </div>
+                <div class="height15">
+                    <div>学院</div>
+                    <div class="fontgrey">应用数学学院</div>
+                </div>
+                <div class="height15">
+                    <div>专业</div>
+                    <div class="fontgrey">电子信息</div>
+                </div>
+                <div class="height15">
+                    <div>班级</div>
+                    <div class="fontgrey">21数学专硕</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
