@@ -1,4 +1,6 @@
-/* 
+.Home {
+  text-align: center;
+}
 .layout-bottom {
   position: fixed;
   bottom: 0;
@@ -15,28 +17,30 @@
 }
 .b1 {
   width: 8.7vw;
-  background-image: url("./asset/img/1.jpg");
+  background-image: url("../asset/img/1.jpg");
 }
 
 .b2 {
   width: 30.4vw;
-  background-image: url("./asset/img/2.jpg");
+  /* height: 110px; */
+  background-image: url("../asset/img/2.jpg");
 }
 
 .b3 {
   width: 30.4vw;
-  background-image: url("./asset/img/3.jpg");
+  /* height: 110px; */
+  background-image: url("../asset/img/3.jpg");
 }
 
 .b4 {
   width: 30.4vw;
-
-  background-image: url("./asset/img/4.jpg");
+  /* height: 110px; */
+  background-image: url("../asset/img/4.jpg");
 }
-.zhanwei{
+.zhanwei {
   width: 100vw;
   height: 230px;
-  background-image: url("./asset/img/zhanwei.jpg");
+  background-image: url("../asset/img/zhanwei.jpg");
   background-size: cover;
   background-repeat: no-repeat;
 }
@@ -59,4 +63,4 @@
   height: 40px;
   line-height: 40px;
   border-bottom: 1px solid #f0f0f0;
-} */
+}
