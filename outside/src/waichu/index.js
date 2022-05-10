@@ -1,4 +1,12 @@
+import { useState } from "react";
 export default function Waichu() {
+  const [asd, setAsd] = useState(0);
+  const info2 = [
+    ["黄嘉诚", "2112114060", "应用数学学院", "电子信息", "21数学专硕"],
+    ["张智云", "2112114062", "应用数学学院", "电子信息", "21数学专硕"],
+    ["王泽仁", "2112114063", "应用数学学院", "电子信息", "21数学专硕"],
+    ["曾远辉", "2112114060", "应用数学学院", "电子信息", "21数学专硕"],
+  ];
   const unloadHander = (e) => {
     // 获取浏览器信息ua
     let u = navigator.userAgent;
@@ -7,6 +15,7 @@ export default function Waichu() {
     if (isAndroid) {
       // 处理事件
       alert("asdasd:", e);
+      setAsd(0);
     }
   };
 
@@ -173,24 +182,24 @@ export default function Waichu() {
             <h5 class="bgc_g fontgrey">学生信息</h5>
             <div class="bgc_w">
               <div class="height15">
-                <div>姓名</div>
-                <div class="fontgrey">黄嘉诚</div>
+                <div onClick={()=>setAsd(0)}>姓名</div>
+                <div class="fontgrey">{info2[asd][0]}</div>
               </div>
               <div class="height15">
-                <div>学号</div>
-                <div class="fontgrey">2112114060</div>
+                <div onClick={()=>setAsd(1)}>学号</div>
+                <div class="fontgrey">{info2[asd][1]}</div>
               </div>
               <div class="height15">
-                <div>学院</div>
-                <div class="fontgrey">应用数学学院</div>
+                <div onClick={()=>setAsd(2)}>学院</div>
+                <div class="fontgrey">{info2[asd][2]}</div>
               </div>
               <div class="height15">
-                <div>专业</div>
-                <div class="fontgrey">电子信息</div>
+                <div onClick={()=>setAsd(3)}>专业</div>
+                <div class="fontgrey">{info2[asd][3]}</div>
               </div>
               <div class="height15">
                 <div>班级</div>
-                <div class="fontgrey">21数学专硕</div>
+                <div class="fontgrey">{info2[asd][4]}</div>
               </div>
             </div>
           </div>

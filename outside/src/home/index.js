@@ -4,17 +4,9 @@ import { useNavigate } from "react-router-dom";
 
 export default function Home() {
   const [showlist, setShowlist] = useState(false);
+  
   const navigate = useNavigate();
   //   const [iswaichu, setIswaichu] = useState(false);
-
-  //   const info2 = [
-  //     ["黄嘉诚", "2112114060", "应用数学学院", "电子信息", "21数学专硕"][
-  //       ("张智云", "2112114062", "应用数学学院", "电子信息", "21数学专硕")
-  //     ][("王泽仁", "2112114063", "应用数学学院", "电子信息", "21数学专硕")][
-  //       ("曾远辉", "2112114060", "应用数学学院", "电子信息", "21数学专硕")
-  //     ],
-  //   ];
-
   return (
     <div className="Home">
       <>
@@ -38,7 +30,7 @@ export default function Home() {
 
       {showlist && (
         <div className="layout-pop">
-          <div><a href="www.baidu.com">勤工助学</a></div>
+          <div>勤工助学</div>
           <div>学风督导</div>
           <div
             onClick={() => {
